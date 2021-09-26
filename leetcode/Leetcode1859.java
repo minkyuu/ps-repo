@@ -1,5 +1,3 @@
-package leetcode_problem.sort;
-
 // 문제 링크 : https://leetcode.com/problems/sorting-the-sentence/
 
 import java.util.StringTokenizer;
