@@ -1,11 +1,17 @@
 // 문제 링크 : https://www.acmicpc.net/problem/2751
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
-    static int[] nums;
+
+    static List<Integer> nums = new ArrayList<>();
+
     public static void main(String[] args) throws Exception{
         input();
         solve();
@@ -15,16 +21,20 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
-        nums = new int[n];
         for (int i = 0; i < n; i++){
-            nums[i] = Integer.parseInt(br.readLine());
+            nums.add(Integer.parseInt(br.readLine()));
         }
     }
 
-    private static void solve() {
-        Arrays.sort(nums);
+    private static void solve() throws Exception {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        Collections.sort(nums);
         for (int num : nums){
-            System.out.println(num);
+            bw.write(num + "\n");
         }
+
+        bw.flush();
+        bw.close();
     }
 }
